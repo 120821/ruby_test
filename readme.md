@@ -50,3 +50,86 @@ curl -c cookies.txt -o style.css# https://example.com/style.css
 ```
 
 这将下载CSS文件和Cookies，并将其保存在当前目录下的style.css文件和cookies.txt文件中。
+### array的简单使用
+Ruby中的数组是一组有序的数据集合。下面是一些常见的数组操作：
+
+1. 创建数组
+
+可以使用方括号（[]）或Array.new方法来创建一个空的数组：
+
+```ruby
+array1 = []
+array2 = Array.new
+```
+
+也可以在创建数组的同时添加元素：
+
+```ruby
+array3 = [1, 2, 3]
+```
+
+2. 访问数组元素
+
+可以使用下标（从0开始）来访问数组元素：
+
+```ruby
+array = [1, 2, 3]
+puts array[0]  # 输出1
+puts array[1]  # 输出2
+puts array[2]  # 输出3
+```
+
+还可以使用负数下标访问数组末尾的元素，例如：
+
+```ruby
+puts array[-1]  # 输出3
+puts array[-2]  # 输出2
+```
+
+3. 改变数组元素
+
+可以使用下标来改变数组元素的值：
+
+```ruby
+array = [1, 2, 3]
+array[0] = 4
+puts array  # 输出 [4, 2, 3]
+```
+
+4. 数组的方法
+
+Ruby中的数组有许多实用的方法，例如：
+
+```ruby
+array = [1, 2, 3]
+array.push(4)  # 添加元素4到数组末尾
+puts array  # 输出 [1, 2, 3, 4]
+
+array.pop  # 删除数组末尾的元素
+puts array  # 输出 [1, 2, 3]
+
+array.shift  # 删除数组第一个元素
+puts array  # 输出 [2, 3]
+
+array.unshift(1)  # 在数组开头添加元素1
+puts array  # 输出 [1, 2, 3]
+
+array.each do |element|
+  puts element
+end
+# 依次输出1, 2, 3
+
+array.map do |element|
+  element * 2
+end
+# 返回一个新数组，其中每个元素都是原数组对应元素的2倍
+
+array.select do |element|
+  element > 2
+end
+# 返回一个新数组，其中包含原数组中所有大于2的元素
+
+array.sort  # 返回一个新数组，其中元素按升序排列
+```
+
+上述只是数组操作的一些基础，Ruby中的数组拥有更多的方法和操作，可以根据实际需要进行学习和掌握。
