@@ -24,3 +24,29 @@ IRB是一个ruby交互式解释器，它允许用户在命令行界面上输入�
 - Tab键: 自动补全命令、方法和文件名
 - 上箭头: 回到上一个命令
 - 按住`Ctrl`键加字符“r”: 搜索之前使用过的命令历史记录，然后按下回车键可执行搜索结果。
+### curl 保存css或者js
+要使用curl保存CSS或JS文件，可以使用以下命令：
+
+1. 下载CSS文件：
+
+```
+curl -o style.css https://example.com/style.css
+```
+
+这将下载一个来自https://example.com/style.css的CSS文件，并将其保存为当前目录下的style.css文件。如果您想指定另一个目录，请提供该目录的完整路径。
+
+2. 下载JavaScript文件：
+
+```
+curl -o script.js https://example.com/script.js
+```
+
+这将下载一个来自https://example.com/script.js的JavaScript文件，并将其保存为当前目录下的script.js文件。
+
+您还可以使用-c参数追踪Cookies，并使用#号指定要保存的文件名。例如：
+
+```
+curl -c cookies.txt -o style.css# https://example.com/style.css
+```
+
+这将下载CSS文件和Cookies，并将其保存在当前目录下的style.css文件和cookies.txt文件中。
