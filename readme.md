@@ -133,3 +133,87 @@ array.sort  # 返回一个新数组，其中元素按升序排列
 ```
 
 上述只是数组操作的一些基础，Ruby中的数组拥有更多的方法和操作，可以根据实际需要进行学习和掌握。
+### hash的简单使用
+Ruby中的Hash是一种用于储存“键/值”对的数据类型，类似于Python中的字典。以下是Hash的简单使用：
+
+1. 创建一个空的Hash:
+
+```
+empty_hash = {}
+```
+
+或者使用Hash.new方法创建空的Hash：
+
+```
+empty_hash = Hash.new
+```
+
+2. 创建一个具有键/值对的Hash：
+
+```
+person = {"name" => "John", "age" => 30, "height" => 175}
+```
+
+也可以使用冒号（：）来表示键/值对：
+
+```
+person = {name: "John", age: 30, height: 175}
+```
+
+3. 访问Hash中的值：
+
+```
+person["name"]
+```
+
+或者使用符号键来访问Hash中的值：
+
+```
+person[:name]
+```
+
+4. 添加一个键/值对到Hash中：
+
+```
+person["weight"] = 70
+```
+
+或者使用符号键添加一个键/值对：
+
+```
+person[:weight] = 70
+```
+
+5. 删除一个键/值对：
+
+```
+person.delete("age")
+```
+
+或者使用符号键删除一个键/值对：
+
+```
+person.delete(:age)
+```
+
+6. 遍历Hash：
+
+```
+person.each do |key, value|
+  puts "#{key}: #{value}"
+end
+```
+
+或者只遍历键或值：
+
+```
+person.keys.each do |key|
+  puts key
+end
+
+person.values.each do |value|
+  puts value
+end
+```
+
+这些是Ruby中Hash的基础操作，可以帮助您开始使用Hash。
