@@ -1,6 +1,55 @@
-### ruby的irb
-IRB是一个ruby交互式解释器，它允许用户在命令行界面上输入并执行ruby代码。IRB是一个非常有用的工具，可以帮助开发人员快速测试和调试代码，并且可以实时查看代码执行的结果。IRB提供了许多便捷的特性，例如自动补全和历史记录，可以大大提高开发效率。要启动irb，请在命令行界面上键入“irb”，然后按回车键即可开始使用。
-### irb的简单使用
+### 学习过程中，源代码文件中，若包含中文编码，则需要注意两点：
+1. 必须在首行添加 # -*- coding: UTF-8 -*-,告诉解释器使用utf-8来解析源码。
+2. 必须设置编辑器保存文件的编码为utf-8。
+### Ruby 命令行选项
+Ruby 一般是从命令行运行，方式如下：
+```
+$ ruby [ options ] [.] [ programfile ] [ arguments ... ]
+```
+### ruby 语法
+所有的 Ruby 文件扩展名都是 .rb。所以，把下面的源代码放在 test.rb 文件中。
+```
+puts "Hello, Ruby!";
+```
+假设您的 /usr/bin 目录下(或者asdf-ruby)已经有可用的 Ruby 解释器。现在，尝试运行这个程序，如下所示：
+```
+$ ruby test.rb
+```
+这将会产生下面的结果：
+```
+Hello, Ruby!
+```
+#### Ruby 程序中的空白
+在 Ruby 代码中的空白字符，如空格和制表符一般会被忽略，除非当它们出现在字符串中时才不会被忽略。然而，有时候它们用于解释模棱两可的语句。当启用 -w 选项时，这种解释会产生警告。
+
+```
+a + b 被解释为 a+b （这是一个局部变量）
+a  +b 被解释为 a(+b) （这是一个方法调用）
+```
+
+#### Ruby 程序中的行尾
+Ruby 把分号和换行符解释为语句的结尾。但是，如果 Ruby 在行尾遇到运算符，比如 +、- 或反斜杠，它们表示一个语句的延续。
+
+#### Ruby 标识符
+标识符是变量、常量和方法的名称。Ruby 标识符是大小写敏感的。这意味着 Ram 和 RAM 在 Ruby 中是两个不同的标识符。
+Ruby 标识符的名称可以包含字母、数字和下划线字符（ _ ）。
+### 保留字
+Ruby 中的保留字。这些保留字不能作为常量或变量的名称。但是，它们可以作为方法名。
+```
+BEGIN	do	next	then
+END	else	nil	true
+alias	elsif	not	undef
+and	end	or	unless
+begin	ensure	redo	until
+break	false	rescue	when
+case	for	retry	while
+class	if	return	yield
+def	in	self	__FILE__
+defined?	module	super	__LINE__
+```
+
+### ruby的irb IRB是一个ruby交互式解释器，它允许用户在命令行界面上输入并执行ruby代码。IRB是一个非常有用的工具，可以帮助开发人员快速测试和调试代码，并且可以实时查看代码执行的结果。IRB提供了许多便捷的特性，例如自动补全和历史记录，可以大大提高开发效率。要启动irb，请在命令行界面上键入“irb”，然后按回车键即可开始使用。
+#### irb的简单使用
 当你在命令行环境内键入“irb”后，即可进入irb环境。
 
 下面是一些irb的简单命令：
@@ -215,5 +264,4 @@ person.values.each do |value|
   puts value
 end
 ```
-
 这些是Ruby中Hash的基础操作，可以帮助您开始使用Hash。
