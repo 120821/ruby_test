@@ -48,6 +48,78 @@ def	in	self	__FILE__
 defined?	module	super	__LINE__
 ```
 
+#### Ruby 中的 Here Document
+"Here Document" 是指建立多行字符串。在 << 之后，您可以指定一个字符串或标识符来终止字符串，且当前行之后直到终止符为止的所有行是字符串的值。
+
+如果终止符用引号括起，引号的类型决定了面向行的字符串类型。请注意<< 和终止符之间必须没有空格。
+
+```
+print <<EOF
+    这是第一种方式创建here document 。
+    多行字符串。
+EOF
+
+print <<"EOF";                # 与上面相同
+    这是第二种方式创建here document 。
+    多行字符串。
+EOF
+
+print <<`EOC`                 # 执行命令
+    echo hi there
+    echo lo there
+EOC
+
+print <<"foo", <<"bar"          # 您可以把它们进行堆叠
+    I said foo.
+foo
+    I said bar.
+bar
+```
+
+output:
+```
+这是第一种方式创建here document 。
+多行字符串。
+这是第二种方式创建here document 。
+多行字符串。
+hi there
+lo there
+I said foo.
+I said bar.
+```
+#### Ruby BEGIN 语句
+语法：
+```
+BEGIN {
+   code
+}
+```
+声明 code 会在程序运行之前被调用。
+```
+
+puts "这是主 Ruby 程序"
+
+BEGIN {
+   puts "初始化 Ruby 程序"
+}
+```
+output:
+```
+初始化 Ruby 程序
+这是主 Ruby 程序
+```
+
+#### Ruby END 语句
+
+```
+END {
+   code
+}
+```
+
+
+
+
 ### ruby的irb IRB是一个ruby交互式解释器，它允许用户在命令行界面上输入并执行ruby代码。IRB是一个非常有用的工具，可以帮助开发人员快速测试和调试代码，并且可以实时查看代码执行的结果。IRB提供了许多便捷的特性，例如自动补全和历史记录，可以大大提高开发效率。要启动irb，请在命令行界面上键入“irb”，然后按回车键即可开始使用。
 #### irb的简单使用
 当你在命令行环境内键入“irb”后，即可进入irb环境。
@@ -73,7 +145,9 @@ defined?	module	super	__LINE__
 - Tab键: 自动补全命令、方法和文件名
 - 上箭头: 回到上一个命令
 - 按住`Ctrl`键加字符“r”: 搜索之前使用过的命令历史记录，然后按下回车键可执行搜索结果。
+
 ### curl 保存css或者js
+
 要使用curl保存CSS或JS文件，可以使用以下命令：
 
 1. 下载CSS文件：
